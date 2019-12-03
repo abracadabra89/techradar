@@ -20,7 +20,8 @@ class EventForm extends React.Component {
 		if (!isEmptyObject(errors)) {
 		this.setState({ errors });
 		} else {
-			console.log(event)
+			const { onSubmit} = this.props;
+			onSubmit(event)
 		}
 	}
 
@@ -28,16 +29,18 @@ class EventForm extends React.Component {
 		const { target } = event;
 		const { name } = target;
 		const value = target.type === 'checkbox' ? target.checked : target.value;
-	
-		this.setState(prevState => ({
-		event: {
-			...prevState.event,
-			[name]: value,
-		},
-		}));
+		this.updateEvent(name, value)
 	}
+	
 
-		
+		updateEvent(key, value) {
+			this.setState(prevState => ({
+			event: {
+				...prevState.event,
+				[key]: value,
+			},
+			}));
+		}
 
 		
 		
