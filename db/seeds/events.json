@@ -1,0 +1,51 @@
+[
+	{
+	  "event_type": "Workshop",
+	  "event_date": "2019-12-05",
+	  "title": "Aspire to Her x BCG Digital Ventures",
+	  "speaker": "ANNA TOLMACH, RAN WEI, STEPHANIE REAVES",
+	  "host": "RONA LI",
+	  "published": true
+	},
+	{
+	  "event_type": "Panel",
+	  "event_date": "2020-12-11",
+	  "title": "TechMeeting - The Future of Work",
+	  "speaker": "Tim Meehan, Sophie Wade",
+	  "host": "Methew Powers",
+	  "published": true
+	},
+	{
+	  "event_type": "Panel",
+	  "event_date": "2020-12-10",
+	  "title": "Big Data, Analytics, and Enterprise Privacy",
+	  "speaker": "Renata Lowenbraun, Xinping Zhu, Nils-Åke Hillarp",
+	  "host": "David H. Hubel, Herbert Jasper",
+	  "published": true
+	},
+	{
+	  "event_type": "Symposium",
+	  "event_date": "2020-06-08",
+	  "title": "The Neuroscience of Moral Decision Making in Ethics",
+	  "speaker": "Michel Jouvet, Bernard Katz, Emil Kraepelin",
+	  "host": "Lawrence C. Katz",
+	  "published": true
+	},
+	{
+	  "event_type": "Discussion",
+	  "event_date": "2020-12-05",
+	  "title": "Gotham Venture Monitor: Media and Tech Preview 2020",
+	  "speaker": "Tejpaul Bhatia , Betsy Morgan, Steve Rosenbaum",
+	  "host": "Andrew Ungberg ",
+	  "published": true
+	},
+	{
+	  "event_type": "Networking",
+	  "event_date": "2020-12-10",
+	  "title": "WomenHack - NYC Employer Ticket",
+	  "speaker": "Aristides Leão",
+	  "host": "Louis Lapicque",
+	  "published": true
+	}
+  ]
+  
