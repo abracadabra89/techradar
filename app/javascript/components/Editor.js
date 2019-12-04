@@ -64,6 +64,7 @@ class Editor extends React.Component {
     }
   }
 
+
   render() {
     const { events } = this.state;
     if (events === null) return null;

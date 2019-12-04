@@ -3,7 +3,7 @@ import React from 'react';
 
 const Header = () => (
   <header>
-    <h1>Event Manager</h1>
+    <h1>Techradar</h1>
   </header>
 );
 

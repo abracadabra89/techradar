@@ -64,7 +64,7 @@ class EventForm extends React.Component {
 		render() {
 			return (
 			<div>
-				<h2>New Event</h2>
+			<p><h3>New Event</h3></p>
 				{this.renderErrors()}
 				<form className="eventForm" onSubmit={this.handleSubmit}>
 				<div>
@@ -132,10 +132,6 @@ class EventForm extends React.Component {
 			);
 		}
 	}
-		
-		// EventForm.propTypes = {
-		// event: PropTypes.shape(),
-		// };
 		
 		EventForm.defaultProps = {
 		event: {

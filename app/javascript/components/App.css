@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto:400,700,300,400italic");
-@import url("https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700,300,400italic");
+@import url("https://fonts.googleapis.com/css?family=Nunito|Tomorrow:400,500,700");
 
 body, html, div, blockquote, img, label, p, h1, h2, h3, h4, h5, h6, pre, ul, ol, li, dl, dt, dd, form, a, fieldset, input, th, td {
   margin: 0;
@@ -10,23 +10,28 @@ ul, ol {
   list-style: none;
 }
 
+p {
+	text-align: center;
+}
+
 body {
-  font-family: Roboto;
+  font-family: "Roboto";
   font-size: 16px;
   line-height: 28px;
 }
 
 header {
-  background: #f57011;
+  background: rgb(57, 183, 224);
   height: 60px;
+  text-align: center;
 }
 
 header h1, header h1 a{
   display: inline-block;
-  font-family: "Maven Pro";
+  font-family: "Roboto";
   font-size: 28px;
   font-weight: 500;
-  color: white;
+  color: rgb(255, 255, 255);
   padding: 14px 5%;
   text-decoration: none;
 }
@@ -44,14 +49,18 @@ header h1 a:hover {
   height: calc(100vh - 145px);
 }
 
+.eventForm {
+	text-align: center;
+}
+
 .eventList {
-  background: #f6f6f6;
+  background: #ebbaba;
   padding: 16px;
 }
 
 .eventList h2 {
-  font-size: 20px;
-  padding: 8px 6px 10px;
+  font-size: 18px;
+  padding: 5px 4px 5px;
 }
 
 .eventContainer {
@@ -89,6 +98,9 @@ header h1 a:hover {
   margin-top: 15px;
 }
 
+.eventForm h3 {
+	text-align: center;
+  }
 label > strong {
   display: inline-block;
   vertical-align: top;
@@ -110,7 +122,7 @@ input[type="checkbox"] {
 }
 
 button[type="submit"] {
-  background: #f57011;
+  background:#236fff;
   border: none;
   padding: 5px 25px 8px;
   font-weight: 500;
@@ -142,6 +154,14 @@ button[type="submit"] {
   font-weight: 0.9;
 }
 
+ul {
+	list-style: none;
+	padding: 0;
+  }
+  li {
+	padding: 5px 10px;
+	border: 1px solid #DDDDDD;
+  }
 button.delete {
   background: none !important;
   border: none;

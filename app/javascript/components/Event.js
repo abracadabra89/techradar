@@ -1,13 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 const Event = ({ event, onDelete }) => (
   <div className="eventContainer">
     <h2>
       {event.event_date}
-      {' - '}
+      {'  '}
       {event.event_type}
       {' '}
+      <br></br>
       <button className='delete' type="button" onClick={()=> onDelete(event.id)}>Delete</button>
     </h2>
     <ul>
@@ -45,12 +45,5 @@ const Event = ({ event, onDelete }) => (
   </div>
 );
 
-Event.propTypes = {
-  event: PropTypes.shape()
-};
-
-Event.defaultProps = {
-  event: undefined,
-};
 
 export default Event;
