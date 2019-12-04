@@ -9,11 +9,9 @@ class EventForm extends React.Component {
 		event: props.event,
 		errors: {},
  };
-	this.handleSubmit = this.handleSubmit.bind(this);
-	this.handleInputChange = this.handleInputChange.bind(this);
 	}
 
-	handleSubmit(e) {
+	 handleSubmit = (e) => {
 		e.preventDefault();
 		const { event } = this.state;
 		const errors = validateEvent(event);
@@ -25,7 +23,7 @@ class EventForm extends React.Component {
 		}
 	}
 
-	handleInputChange(event) {
+	handleInputChange = (event) => {
 		const { target } = event;
 		const { name } = target;
 		const value = target.type === 'checkbox' ? target.checked : target.value;
@@ -42,7 +40,6 @@ class EventForm extends React.Component {
 			}));
 		}
 
-		
 		
 		renderErrors() {
 			const { errors } = this.state;
@@ -64,7 +61,7 @@ class EventForm extends React.Component {
 		render() {
 			return (
 			<div>
-			<p><h3>New Event</h3></p>
+			<h3>New Event</h3>
 				{this.renderErrors()}
 				<form className="eventForm" onSubmit={this.handleSubmit}>
 				<div>
@@ -75,6 +72,7 @@ class EventForm extends React.Component {
 						id="event_type"
 						name="event_type"
 						onChange={this.handleInputChange}
+						value={event.event_type}
 					/>
 					</label>
 					</div>
@@ -85,6 +83,7 @@ class EventForm extends React.Component {
 						type="text"
 						id="event_date"
 						name="event_date"
+						value={event.event_date}
 						onChange={this.handleInputChange}
 					/>
 					</label>
@@ -97,6 +96,7 @@ class EventForm extends React.Component {
 						rows="10"
 						id="title"
 						name="title"
+						value={event.title}
 						onChange={this.handleInputChange}
 					/>
 					</label>
@@ -104,13 +104,23 @@ class EventForm extends React.Component {
 				<div>
 					<label htmlFor="speaker">
 					<strong>Speakers:</strong>
-					<input type="text" id="speaker" name="speaker" onChange={this.handleInputChange} />
+					<input 
+					type="text" 
+					id="speaker" 
+					name="speaker" 
+					value={event.speaker}
+					onChange={this.handleInputChange} />
 					</label>
 				</div>
 				<div>
 					<label htmlFor="host">
 					<strong>Hosts:</strong>
-					<input type="text" id="host" name="host" onChange={this.handleInputChange} />
+					<input 
+					type="text" 
+					id="host" 
+					name="host" 
+					value={event.host}
+					onChange={this.handleInputChange} />
 					</label>
 				</div>
 				<div>
@@ -120,6 +130,7 @@ class EventForm extends React.Component {
 						type="checkbox"
 						id="published"
 						name="published"
+						value={event.published}
 						onChange={this.handleInputChange}
 					/>
 					</label>
@@ -132,6 +143,7 @@ class EventForm extends React.Component {
 			);
 		}
 	}
+
 		
 		EventForm.defaultProps = {
 		event: {

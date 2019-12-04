@@ -13,20 +13,19 @@ class Editor extends React.Component {
 
     this.addEvent = this.addEvent.bind(this);
     this.deleteEvent = this.deleteEvent.bind(this);
+    this.updateEvent = this.updateEvent.bind(this);
 
     this.state = {
       events: null,
     };
-  }
+  }  
 
-  componentDidMount() {
-    axios
-      .get('/api/events.json')
-      .then(response => this.setState({ events: response.data }))
-      .catch((error) => {
-        alert(error);
-      });
-  }
+    componentDidMount() {
+      axios
+        .get('/api/events.json')
+        .then(response => this.setState({ events: response.data }))
+    }
+
     addEvent(newEvent) {
       axios
       .post('/api/events.json', newEvent)
@@ -39,9 +38,6 @@ class Editor extends React.Component {
         const {history} = this.props;
         history.push(`/events/${savedEvent.id}`);
       })
-      .catch((error)=> {
-        console.log(error)
-      });
     }
 
     deleteEvent(eventId) {
@@ -58,10 +54,22 @@ class Editor extends React.Component {
         this.setState({events: events.filter(event => event.id !== eventId)})
         }
       })
-      .catch((error)=> {
-        console.log(error);
-      });
     }
+  }
+
+
+  updateEvent(updatedEvent){
+    axios
+    .put(`/api/events/${updatedEvent.id}.json`, updatedEvent)
+    .then(() => {
+      alert('Event updated');
+      const { events} = this.state;
+      const idx = events.findIndex(event => event.id === updatedEvent.id);
+      events[idx] = updatedEvent;
+      const {history} = this.props;
+      history.push(`/events/${updatedEvent.id}`);
+      this.setState({events});
+    })
   }
 
 
@@ -70,7 +78,7 @@ class Editor extends React.Component {
     if (events === null) return null;
     const { match } = this.props;
     const eventId = match.params.id;
-    const event = events.find(e => e.id === Number(eventId));
+    const event = events.find(elm => elm.id === Number(eventId));
 
     return (
       <div>
@@ -79,6 +87,7 @@ class Editor extends React.Component {
           <EventList events={events} activeId={Number(eventId)} />
           <Switch>
             <PropsRoute path="/events/new" component={EventForm} onSubmit={this.addEvent} />
+            <PropsRoute path="/events/:id/edit" component={EventForm} event={event} onSubmit={this.updateEvent} />
             <PropsRoute path="/events/:id" component={Event} event={event} onDelete={this.deleteEvent} />
           </Switch>
         </div>

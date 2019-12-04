@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Event = ({ event, onDelete }) => (
   <div className="eventContainer">
@@ -8,6 +9,7 @@ const Event = ({ event, onDelete }) => (
       {event.event_type}
       {' '}
       <br></br>
+      <Link to={`/events/${event.id}/edit`}>Edit</Link>
       <button className='delete' type="button" onClick={()=> onDelete(event.id)}>Delete</button>
     </h2>
     <ul>
