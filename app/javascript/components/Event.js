@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom';
 const Event = ({ event, onDelete }) => (
   <div className="eventContainer">
     <h2>
-      {event.event_date}
-      {'  '}
-      {event.event_type}
       {' '}
-      <br></br>
+      {event.event_type}
       <Link to={`/events/${event.id}/edit`}>Edit</Link>
       <button className='delete' type="button" onClick={()=> onDelete(event.id)}>Delete</button>
+      <br></br>
+      {' '}
+      <br></br>
     </h2>
     <ul>
       <li>

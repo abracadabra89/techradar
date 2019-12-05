@@ -8,61 +8,56 @@ import { Switch } from 'react-router-dom';
 import EventForm from './EventForm';
 
 class Editor extends React.Component {
-  constructor(props) {
-    super(props);
+  
+      state = {
+        events: null,
+      };
 
-    this.addEvent = this.addEvent.bind(this);
-    this.deleteEvent = this.deleteEvent.bind(this);
-    this.updateEvent = this.updateEvent.bind(this);
+      componentDidMount() {
+        axios
+          .get('/api/events.json')
+          .then(response => this.setState({ events: response.data }))
+      }
 
-    this.state = {
-      events: null,
-    };
-  }  
+      addEvent = (newEvent) => {
+        axios
+        .post('/api/events.json', newEvent)
+        .then((response)=> {
+          alert('Your dawg is being prepared!');
+          const savedEvent = response.data;
+          this.setState(prevState => ({
+            events: [...prevState.events, savedEvent],
+          }));
+          const {history} = this.props;
+          history.push(`/events/${savedEvent.id}`);
+        })
+      }
 
-    componentDidMount() {
-      axios
-        .get('/api/events.json')
-        .then(response => this.setState({ events: response.data }))
+      
+
+      deleteEvent = (eventId) => {
+        const deleteEvent = window.confirm("Delete this dawg?")
+        if(deleteEvent){
+        axios
+        .delete(`/api/events/${eventId}.json`)
+        .then((response)=> {
+          if(response.status === 204){
+            alert('Dawg deleted!')
+          const {history} = this.props;
+          history.push('/events');
+          const {events} = this.state;
+          this.setState({events: events.filter(event => event.id !== eventId)})
+          }
+        })
+      }
     }
 
-    addEvent(newEvent) {
-      axios
-      .post('/api/events.json', newEvent)
-      .then((response)=> {
-        alert('You added an event!');
-        const savedEvent = response.data;
-        this.setState(prevState => ({
-          events: [...prevState.events, savedEvent],
-        }));
-        const {history} = this.props;
-        history.push(`/events/${savedEvent.id}`);
-      })
-    }
 
-    deleteEvent(eventId) {
-      const deleteEvent = window.confirm("Delete this event?")
-      if(deleteEvent){
-      axios
-      .delete(`/api/events/${eventId}.json`)
-      .then((response)=> {
-        if(response.status === 204){
-          alert('Event deleted!')
-        const {history} = this.props;
-        history.push('/events');
-        const {events} = this.state;
-        this.setState({events: events.filter(event => event.id !== eventId)})
-        }
-      })
-    }
-  }
-
-
-  updateEvent(updatedEvent){
+  updateEvent = (updatedEvent) => {
     axios
     .put(`/api/events/${updatedEvent.id}.json`, updatedEvent)
     .then(() => {
-      alert('Event updated');
+      alert('Dawg updated');
       const { events} = this.state;
       const idx = events.findIndex(event => event.id === updatedEvent.id);
       events[idx] = updatedEvent;
@@ -72,7 +67,7 @@ class Editor extends React.Component {
     })
   }
 
-
+  
   render() {
     const { events } = this.state;
     if (events === null) return null;

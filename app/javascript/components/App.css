@@ -6,6 +6,13 @@ body, html, div, blockquote, img, label, p, h1, h2, h3, h4, h5, h6, pre, ul, ol,
   padding: 0;
 }
 
+body {
+	background-image: url('https://cdn4.vectorstock.com/i/1000x1000/33/23/seamless-background-of-sausages-vector-3853323.jpg');
+	background-position: center;
+  	background-repeat: no-repeat;
+  	background-size: cover;
+}
+
 ul, ol {
   list-style: none;
 }
@@ -15,25 +22,26 @@ p {
 }
 
 body {
-  font-family: "Roboto";
-  font-size: 16px;
+  font-family: "Tommorow";
   line-height: 28px;
 }
 
 header {
-  background: rgb(57, 183, 224);
+  background: rgb(233, 84, 58);
   height: 60px;
-  text-align: center;
+  text-align: right;
 }
+
 
 header h1, header h1 a{
   display: inline-block;
-  font-family: "Roboto";
+  font-family: "Tomorrow";
   font-size: 28px;
   font-weight: 500;
   color: rgb(255, 255, 255);
   padding: 14px 5%;
   text-decoration: none;
+  text-align: center;
 }
 
 header h1 a:hover {
@@ -54,22 +62,19 @@ header h1 a:hover {
 }
 
 .eventList {
-  background: #ebbaba;
-  padding: 16px;
+	font-family: "Tomorrow";
+	font-size: 16px;
+  
 }
 
-.eventList h2 {
-  font-size: 18px;
-  padding: 5px 4px 5px;
-}
 
 .eventContainer {
-  font-size: 15px;
-  line-height: 35px;
+  font-size: 16px;
 }
 
 .eventContainer h2 {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
+  font-family: "Tomorrow";
 }
 
 .eventList li:hover, a.active {
@@ -78,6 +83,7 @@ header h1 a:hover {
 
 .eventList a {
   display: block;
+  font-size: 16px;
   color: black;
   text-decoration: none;
   border-bottom: 1px solid #dddddd;
@@ -87,7 +93,7 @@ header h1 a:hover {
 
 .eventList h2 > a {
   color: #236fff;
-  font-size: 15px;
+  font-size: 16px;
   float: right;
   font-weight: normal;
   border-bottom: none;
@@ -107,7 +113,7 @@ label > strong {
   text-align: right;
   width: 100px;
   margin-right: 6px;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 input, textarea {
@@ -122,6 +128,7 @@ input[type="checkbox"] {
 }
 
 button[type="submit"] {
+	font-family: "Tomorrow";
   background:#236fff;
   border: none;
   padding: 5px 25px 8px;
@@ -142,7 +149,7 @@ button[type="submit"] {
   background: red;
   color: white;
   padding: 10px;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .errors ul li {
@@ -164,6 +171,7 @@ ul {
   }
 button.delete {
   background: none !important;
+  font-family: "Tomorrow";
   border: none;
   padding: 0 !important;
   margin-left: 10px;
@@ -181,6 +189,8 @@ button.delete:hover {
 
 h2 a {
   color: #236fff;
+  font-family: "Tomorrow";
+  vertical-align: center;
   font-size: 15px;
   font-weight: normal;
   margin: 3px 12px 0 12px;
@@ -207,3 +217,5 @@ input.search {
   margin: 15px 2px;
   padding: 4px 0 6px 6px;
 }
+
+  

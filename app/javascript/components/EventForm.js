@@ -1,7 +1,6 @@
 import React from 'react';
 import { isEmptyObject, validateEvent } from '../helpers/helpers';
 
-
 class EventForm extends React.Component {
 	constructor(props) {
 		super(props);
@@ -61,7 +60,7 @@ class EventForm extends React.Component {
 		render() {
 			return (
 			<div>
-			<h3>New Event</h3>
+			<h3>New Dog</h3>
 				{this.renderErrors()}
 				<form className="eventForm" onSubmit={this.handleSubmit}>
 				<div>
@@ -78,7 +77,7 @@ class EventForm extends React.Component {
 					</div>
 					<div>
 					<label htmlFor="event_date">
-					<strong>Date:</strong>
+					<strong>Bun:</strong>
 					<input
 						type="text"
 						id="event_date"
@@ -90,7 +89,7 @@ class EventForm extends React.Component {
 				</div>
 				<div>
 					<label htmlFor="title">
-					<strong>Title:</strong>
+					<strong>Fillings:</strong>
 					<textarea
 						cols="30"
 						rows="10"
@@ -103,7 +102,7 @@ class EventForm extends React.Component {
 				</div>
 				<div>
 					<label htmlFor="speaker">
-					<strong>Speakers:</strong>
+					<strong>Meat type:</strong>
 					<input 
 					type="text" 
 					id="speaker" 
@@ -114,7 +113,7 @@ class EventForm extends React.Component {
 				</div>
 				<div>
 					<label htmlFor="host">
-					<strong>Hosts:</strong>
+					<strong>Name dawg:</strong>
 					<input 
 					type="text" 
 					id="host" 
@@ -125,7 +124,7 @@ class EventForm extends React.Component {
 				</div>
 				<div>
 					<label htmlFor="published">
-					<strong>Publish:</strong>
+					<strong>Order!</strong>
 					<input
 						type="checkbox"
 						id="published"

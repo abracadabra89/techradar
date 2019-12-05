@@ -1,6 +1,6 @@
 class Api::EventsController < ApplicationController
 	respond_to :json
-	#respond_with method which allows to render a resource as JSON.
+	#respond_with  allows to render a resource as JSON
   
 	def index
 	  respond_with Event.order(event_date: :DESC)
